@@ -20,7 +20,7 @@ Esta skill cobre **apenas a etapa de genericação** — transformar uma app **j
    - `.env.io.example` — template fixo da plataforma.
    - `.env.example` — usa placeholders apenas nos **nomes de volumes/networks derivados** (`${PROJECT}_${APP}_${STAGE}_*`).
    - `README.md` — título, subtítulo com slugs, comandos `docker network create`/`docker volume create`, e rodapé com ano/versão.
-3. **Substitui o `LICENSE`** (que na app original costuma ser _copyright all-rights-reserved_ da Embrapa) pela **licença MIT** com o ano atual, **mantendo o aviso de _copyright_ de terceiros** quando a app nasceu de código de outro autor (ex.: um _template_ MIT da comunidade). Boilerplates precisam ser permissivos e não-contaminantes para que qualquer software derivado possa usá-los livremente. Ver `references/license-template.md`.
+3. **Substitui o `LICENSE`** (que na app original costuma ser _copyright all-rights-reserved_ da Embrapa) pela **licença MIT** com o ano atual, **mantendo o `THIRD-PARTY-NOTICES`** com os avisos de terceiros quando a app nasceu de código de outro autor (ex.: um _template_ MIT da comunidade). Boilerplates precisam ser permissivos e não-contaminantes para que qualquer software derivado possa usá-los livremente. Ver `references/license-template.md`.
 4. Garante português brasileiro correto, com acentos e grafia adequada, em toda a documentação e comentários.
 5. Verifica versões das tecnologias (imagens Docker, dependências do `package.json`/equivalente) e, quando detectar versão desatualizada, sinaliza ao usuário e propõe o upgrade antes de finalizar.
 6. Atualiza o `.gitignore` para ignorar artefatos de agentes/IDEs e saídas do BMAD.
@@ -94,7 +94,7 @@ Este passo é **parte do boilerplate**: um boilerplate nascido com versão defas
 3. **Auditoria de versões** (Context7 → confirmar/propor upgrades).
 4. **Identificação de valores reais** que serão substituídos (nome do projeto, slugs, versão, ano, Matomo ID — via `grep` no codebase).
 5. **Rewrite** dos três arquivos-chave (`.env.io.example`, `.env.example`, `README.md`) aplicando os placeholders conforme as regras.
-6. **Substituição do `LICENSE`** por MIT com ano atual, preservando avisos de terceiros (ver `references/license-template.md`).
+6. **Substituição do `LICENSE`** por MIT com ano atual, preservando o `THIRD-PARTY-NOTICES` (ver `references/license-template.md`).
 7. **`.gitlab-io.yml`**: classificar a app (com código × de prateleira), confirmar com o usuário e gravar o arquivo; tratar o `.gitlab-ci.yml` (remover o antigo da plataforma; perguntar se for pipeline da app). Ver `references/gitlab-io.md`.
 8. **Ajuste do `.gitignore`** para ignorar `_bmad/`, `_bmad-output/`, pastas de agentes e arquivos de editor (ver checklist).
 9. **Revisão final de PT-BR** — passe nos arquivos modificados procurando palavras sem acento e corrija.

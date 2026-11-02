@@ -106,7 +106,7 @@ Adapte por linguagem (Python: `__pycache__/`, `.venv/`; Go: `bin/`; PHP: `vendor
 - [ ] `grep -rn '<slug-do-projeto-real>'` retorna vazio nos mesmos arquivos
 - [ ] Todos os placeholders usados estão na lista canônica (`references/placeholders.md`)
 - [ ] `.env.io.example` bate byte-a-byte com o template de `references/env-io-template.md` (modulo os placeholders do projeto)
-- [ ] `LICENSE` foi substituído por MIT com ano atual (primeira linha = `MIT License`, copyright Embrapa, ano corrente), com os avisos de terceiros mantidos — ver `license-template.md`
+- [ ] `LICENSE` foi substituído por MIT com ano atual (primeira linha = `MIT License`, copyright Embrapa, ano corrente), com o `THIRD-PARTY-NOTICES` mantido quando houver — ver `license-template.md`
 
 ### Qualidade do texto em PT-BR
 

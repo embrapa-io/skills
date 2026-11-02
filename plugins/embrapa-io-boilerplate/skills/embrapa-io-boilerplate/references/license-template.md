@@ -12,32 +12,21 @@ Esse modelo **não serve para boilerplates**. Um boilerplate é um template púb
 
 A licença **MIT** é permissiva, não-contaminante (não exige que derivados sejam MIT, não exige abertura do código derivado) e compatível com uso comercial, proprietário e open-source. É o padrão universal para templates/boilerplates.
 
-## Código de terceiros: o aviso original fica
+## Código de terceiros: os avisos ficam em `THIRD-PARTY-NOTICES`
 
-Antes de substituir, leia o `LICENSE` atual. Se a app nasceu de código de terceiros com licença permissiva (um
-_template_ da comunidade, uma biblioteca incorporada), **o aviso de _copyright_ original não pode sair**: a própria MIT
-exige que «the above copyright notice and this permission notice shall be included in all copies». Trocar o arquivo
-inteiro pelo da Embrapa descumpre a licença do autor original.
+Se a app nasceu de código de terceiros com licença permissiva (um _template_ da comunidade, uma biblioteca
+incorporada), **o aviso de _copyright_ e o texto da licença original não podem sair do repositório**: a MIT, por
+exemplo, exige que «the above copyright notice and this permission notice shall be included in all copies». A Alice
+já trata isso nas apps: move o `LICENSE` de terceiros para `THIRD-PARTY-NOTICES`, na raiz, antes de gravar o `LICENSE`
+da Embrapa. Esta skill segue a mesma convenção:
 
-| `LICENSE` atual | O que fazer |
+| Situação | O que fazer |
 | --- | --- |
-| _All rights reserved_ da Embrapa (app institucional) | substituir pelo modelo abaixo, como de costume |
-| MIT de terceiros | manter o texto MIT e **acrescentar** a linha da Embrapa abaixo da original (as duas ficam) |
-| BSD, ISC ou Apache 2.0 de terceiros | não trocar a licença: manter o arquivo original e acrescentar a linha da Embrapa, se a licença permitir; confirmar com o usuário |
-| GPL, AGPL, LGPL ou sem licença | parar e avisar o usuário: o código não pode virar _boilerplate_ MIT sem autorização do autor |
+| Existe `THIRD-PARTY-NOTICES` | **mantê-lo intacto** e substituir o `LICENSE` pela MIT da Embrapa |
+| `LICENSE` atual é permissivo de terceiros (a app não passou pela Alice) | mover o conteúdo integral para `THIRD-PARTY-NOTICES`, com a linha `Código de terceiros incorporado a esta aplicação: <origem>`, e então gravar a MIT da Embrapa |
+| `LICENSE` atual é _copyleft_ (GPL, AGPL, LGPL, MPL) ou sem licença | parar e avisar o usuário: o código não pode virar _boilerplate_ MIT sem análise |
 
-Exemplo (MIT de terceiros):
-
-```
-MIT License
-
-Copyright (c) 2019 Sebastián Ramírez
-Copyright (c) <ANO> Brazilian Agricultural Research Corporation (Embrapa)
-
-Permission is hereby granted, ...
-```
-
-Diga ao usuário, no _diff_ final, que o aviso de terceiros foi mantido e por quê.
+Diga ao usuário, no _diff_ final, que os avisos de terceiros foram mantidos e onde.
 
 ## Quando aplicar
 
@@ -73,7 +62,7 @@ SOFTWARE.
 
 ## Regras
 
-- **Titular do copyright é a Embrapa** (`Brazilian Agricultural Research Corporation`), ao lado do autor original quando houver código de terceiros. Não mude o titular, não coloque nome pessoal, nem nome da Unidade Descentralizada. O boilerplate é propriedade institucional.
+- **Titular do copyright é a Embrapa** (`Brazilian Agricultural Research Corporation`); os autores de código de terceiros ficam no `THIRD-PARTY-NOTICES`. Não mude o titular, não coloque nome pessoal, nem nome da Unidade Descentralizada. O boilerplate é propriedade institucional.
 - **Ano** = ano corrente no momento da genericação. Não `1988`, não `%PLACEHOLDER%`, não o ano do primeiro commit do repo original.
 - **Não traduza** o texto da licença para português. O texto canônico MIT precisa ficar em inglês por razões jurídicas (é a forma reconhecida internacionalmente).
 - **Arquivo sem extensão** (`LICENSE`, não `LICENSE.md` nem `LICENSE.txt`) — convenção Embrapa I/O.
@@ -84,7 +73,7 @@ SOFTWARE.
 Depois de substituir, confirme com um `cat LICENSE` ou leitura que:
 
 - [ ] Primeira linha é `MIT License` (literal)
-- [ ] Avisos de _copyright_ de terceiros que existiam continuam no arquivo
+- [ ] `THIRD-PARTY-NOTICES` (quando havia código de terceiros) continua no repositório, intacto
 - [ ] Linha de copyright da Embrapa contém ano atual (4 dígitos) e `Brazilian Agricultural Research Corporation (Embrapa)`
 - [ ] Texto canônico da MIT presente (parágrafos: "Permission is hereby granted", "The above copyright notice", "THE SOFTWARE IS PROVIDED")
 - [ ] Arquivo termina com quebra de linha
@@ -94,5 +83,5 @@ Depois de substituir, confirme com um `cat LICENSE` ou leitura que:
 - ❌ Não use Apache 2.0, GPL, BSD ou outra licença sem alinhar com o usuário — MIT é a padrão do boilerplate.
 - ❌ Não remova o `LICENSE` por achar que "a plataforma gera depois". Ela não gera.
 - ❌ Não deixe o copyright antigo da Embrapa ("All rights reserved") no arquivo — substitua **integralmente**.
-- ❌ Não apague o aviso de _copyright_ de terceiros (MIT, BSD, Apache): ele fica, com a linha da Embrapa acrescentada.
+- ❌ Não apague nem edite o `THIRD-PARTY-NOTICES`: ele guarda os avisos de terceiros que as licenças exigem.
 - ❌ Não adicione cabeçalho de licença em arquivos de código-fonte. O `LICENSE` raiz é suficiente.
