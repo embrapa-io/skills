@@ -1,0 +1,10 @@
+{
+  "name": "embrapa-io-boilerplate",
+  "version": "1.26.11-1",
+  "description": "Transforma uma app aderente ao Embrapa I/O (validada pela agente Alice) em um boilerplate do catálogo da plataforma.",
+  "author": { "name": "Embrapa I/O", "url": "https://embrapa.io" },
+  "homepage": "https://embrapa.io/docs/boilerplate",
+  "repository": "https://github.com/embrapa-io/skills",
+  "license": "MIT",
+  "keywords": ["embrapa", "embrapa-io", "boilerplate", "template"]
+}
