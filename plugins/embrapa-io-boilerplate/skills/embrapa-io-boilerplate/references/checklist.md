@@ -11,13 +11,13 @@ Rode estas verificações. Se **qualquer** item falhar, pare e peça ao usuário
 - [ ] `.env.example` presente na raiz
 - [ ] `README.md` presente na raiz
 - [ ] `LICENSE` presente na raiz (conteúdo pode ser qualquer um — **a skill vai substituí-lo por MIT** na etapa de genericação; ver `license-template.md`)
-- [ ] `AGENTS.md` presente na raiz
+- [ ] `AGENTS.md` presente na raiz — **não bloqueia**: se faltar, a skill o gera (ver `agents-md.md`)
 - [ ] `.embrapa/settings.json` existe e é JSON válido
 
 Comando rápido:
 
 ```bash
-for f in docker-compose.yaml .env.io.example .env.example README.md LICENSE AGENTS.md .embrapa/settings.json; do
+for f in docker-compose.yaml .env.io.example .env.example README.md LICENSE .embrapa/settings.json; do
   test -f "$f" && echo "✓ $f" || echo "✗ $f FALTANDO"
 done
 ```

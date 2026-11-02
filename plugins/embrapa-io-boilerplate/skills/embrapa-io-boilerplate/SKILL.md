@@ -34,10 +34,10 @@ Antes de qualquer edição, confirme com o usuário e valide:
 - `.embrapa/settings.json` existe e é válido (ver `references/checklist.md`).
 - `docker-compose.yaml` existe e segue o padrão da plataforma (sem campo `version`, network `stack` externa, healthchecks, NO-FALLBACK em env vars).
 - `LICENSE` presente na raiz (pode ter qualquer conteúdo — a skill vai substituí-lo por MIT na etapa de genericação; ver `references/license-template.md`).
-- `AGENTS.md` presente com regras de conformidade.
 - `.env.io.example` e `.env.example` já existem (mesmo que ainda com valores reais).
 
-Se algum item falhar, recuse a genericação e recomende rodar a Alice primeiro.
+Se algum item falhar, recuse a genericação e recomende rodar a Alice primeiro. O `AGENTS.md` **não** é pré-requisito:
+a Alice não o gera; se faltar, esta skill o cria (passo 8b do fluxo, `references/agents-md.md`).
 
 ## Placeholders GENESIS
 
@@ -96,6 +96,9 @@ Este passo é **parte do boilerplate**: um boilerplate nascido com versão defas
 5. **Rewrite** dos três arquivos-chave (`.env.io.example`, `.env.example`, `README.md`) aplicando os placeholders conforme as regras.
 6. **Substituição do `LICENSE`** por MIT com ano atual, preservando o `THIRD-PARTY-NOTICES` (ver `references/license-template.md`).
 7. **`.gitlab-io.yml`**: classificar a app (com código × de prateleira), confirmar com o usuário e gravar o arquivo; tratar o `.gitlab-ci.yml` (remover o antigo da plataforma; perguntar se for pipeline da app). Ver `references/gitlab-io.md`.
+8b. **`AGENTS.md`** (diretrizes para os assistentes de IA de quem fizer _fork_): se não existir, gerar a partir do
+   `AGENTS.md` de um boilerplate de referência da mesma família, adaptado à pilha desta app; se existir, revisar. Ver
+   `references/agents-md.md`.
 8. **Ajuste do `.gitignore`** para ignorar `_bmad/`, `_bmad-output/`, pastas de agentes e arquivos de editor (ver checklist).
 9. **Revisão final de PT-BR** — passe nos arquivos modificados procurando palavras sem acento e corrija.
 10. **Análise do SonarQube antes do catálogo** (boilerplate com código; obrigatório ao final do desenvolvimento): orientar o usuário a ligar o MCP do SonarQube se ele ainda não estiver na sessão, garantir o projeto `boilerplate_<nome>`, disparar a análise e corrigir vulnerabilidades, hotspots e bugs até o quality gate passar — só então publicar em `metadata/boilerplates.json`. Ver `references/sonarqube-antes-do-catalogo.md`.
